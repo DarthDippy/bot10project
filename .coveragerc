@@ -1,0 +1,5 @@
+[run]
+include = bot_ten/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
