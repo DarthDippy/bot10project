@@ -97,4 +97,6 @@ See detailed `cookiecutter-django Docker documentation`_.
 
 
 
-
+TODO
+^^^^^^
+Update Django
