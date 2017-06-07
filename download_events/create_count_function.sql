@@ -7,8 +7,8 @@ CREATE OR REPLACE FUNCTION decode.count_instances(
     text)
   RETURNS integer AS
 $BODY$
-SELECT CASE WHEN ((CHAR_LENGTH($1) - CHAR_LENGTH(REPLACE($1, $2, ''))) / CHAR_LENGTH($2)) is not null
-THEN ((CHAR_LENGTH($1) - CHAR_LENGTH(REPLACE($1, $2, ''))) / CHAR_LENGTH($2))
+SELECT CASE WHEN ((CHAR_LENGTH($1) - CHAR_LENGTH(regexp_replace($1, $2, '', 'i'))) / CHAR_LENGTH($2)) is not null
+THEN ((CHAR_LENGTH($1) - CHAR_LENGTH(regexp_replace($1, $2, '', 'i'))) / CHAR_LENGTH($2))
 ELSE 0
 END
 $BODY$
